@@ -17,12 +17,12 @@ content = {
   changeHTML: function(buttonPressedID) {
     var template = null
     if (buttonPressedID === "left") {
-      template = "oh hai there"
+      template = $("#about")
     } else if (buttonPressedID === "center") {
-      template = "well hello"
+      template = $("#project")
     } else if (buttonPressedID === "right") {
-      template = "yeaaaaaaah"
+      template = $("#resume")
     }
-    $("#content").html(template)
+    $("#content").html(template.html())
   }
 }
