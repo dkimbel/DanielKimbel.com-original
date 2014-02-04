@@ -1,14 +1,21 @@
 h1 {
   text-align: center;
   margin-top: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 #buttons {
   margin: 0 auto;
   position: relative;
   width: 760px;
-  height: 760px;
+  height: 192px;
+  margin-bottom: 40px;
+}
+
+#content {
+  margin: 0 auto;
+  position: relative;
+  width: 760px;
 }
 
 .large-nav-button {
