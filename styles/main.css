@@ -1,0 +1,30 @@
+h1 {
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+#content {
+  margin: 0 auto;
+  width: 808px;
+}
+
+.large-nav-button {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  text-align: center;
+}
+
+#left {
+  background-color: red;
+}
+
+#center {
+  background-color: orange;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#right {
+  background-color: yellow;
+}
