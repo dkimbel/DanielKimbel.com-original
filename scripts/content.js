@@ -1,10 +1,11 @@
 content = {
   currentDisplayed: null,
-  changeDisplay: function(e) {
+  displayClicked: function(e) {
     if (e.target.id === content.currentDisplayed) {
       // do nothing
     } else {
-      content.transition(e.target.id)
+      content.currentDisplayed = e.target.id
+      content.transition(content.currentDisplayed)
     }
   },
   transition: function(buttonPressedID) {
