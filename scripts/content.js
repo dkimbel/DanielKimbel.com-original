@@ -4,23 +4,23 @@ content = {
     if (e.target.id === content.currentDisplayed) {
       // do nothing
     } else {
-      content.currentDisplayed = e.target.id
+      content.currentDisplayed = e.target.class
       content.transition(content.currentDisplayed)
     }
   },
-  transition: function(buttonPressedID) {
+  transition: function(buttonPressedClass) {
     $("#content").fadeOut(400, function() {
-      content.changeHTML(buttonPressedID)
+      content.changeHTML(buttonPressedClass)
       $("#content").fadeIn()
     })
   },
-  changeHTML: function(buttonPressedID) {
+  changeHTML: function(buttonPressedClass) {
     var template = null
-    if (buttonPressedID === "left") {
+    if (buttonPressedClass === "left") {
       template = $("#about")
-    } else if (buttonPressedID === "center") {
+    } else if (buttonPressedClass === "center") {
       template = $("#project")
-    } else if (buttonPressedID === "right") {
+    } else if (buttonPressedClass === "right") {
       template = $("#resume")
     }
     $("#content").html(template.html())

@@ -1,14 +1,12 @@
 largeNavButtons = {
-  lastBackgroundColor: null,
   init: function() {
     $(".large-nav-button").hover(largeNavButtons.hoverOn, largeNavButtons.hoverOff)
     .click(content.displayClicked)
   },
   hoverOn: function() {
-    largeNavButtons.lastBackgroundColor = $(this).css("background")
-    $(this).css("background", "blue")
+    $(this).css("background", "#FFF")
   },
   hoverOff: function() {
-    $(this).css("background", largeNavButtons.lastBackgroundColor)
+    $(this).css("background", "#EEE")
   }
 }
