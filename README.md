@@ -1,4 +1,4 @@
 DanielKimbel.com
 ================
 
-My personal site.
+The code for my personal site is viewable on this page.
