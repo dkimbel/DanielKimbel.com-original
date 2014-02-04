@@ -12,11 +12,13 @@ h1 {
 
 .large-nav-button {
   position: absolute;
-  width: 24%;
-  height: 24%;
+  width: 192px;
+  height: 192px;
   display: inline-block;
   text-align: center;
   border-radius: 50%;
+  line-height: 192px;
+  font-size: 18px;
 }
 
 #left {
@@ -26,7 +28,7 @@ h1 {
 
 #center {
   background-color: orange;
-  left: 38%;
+  left: 304px;
 }
 
 #right {
