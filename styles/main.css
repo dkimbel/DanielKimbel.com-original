@@ -22,16 +22,16 @@ h1 {
 }
 
 #left {
-  background-color: red;
+  background: red;
   left: 0px;
 }
 
 #center {
-  background-color: orange;
+  background: orange;
   left: 304px;
 }
 
 #right {
-  background-color: yellow;
+  background: yellow;
   right: 0px;
 }
