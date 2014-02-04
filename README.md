@@ -9,4 +9,4 @@ The code for my personal site is viewable on this page.
 - Style fonts
 - Change button colors to final
 - Add proper content to each template
-- Style hover effect
+- Style hover effect (animate border rotations)
