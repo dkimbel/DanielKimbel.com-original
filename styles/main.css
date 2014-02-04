@@ -5,26 +5,31 @@ h1 {
 
 #content {
   margin: 0 auto;
-  width: 808px;
+  position: relative;
+  width: 800px;
+  height: 800px;
 }
 
 .large-nav-button {
-  width: 200px;
-  height: 200px;
+  position: absolute;
+  width: 24%;
+  height: 24%;
   display: inline-block;
   text-align: center;
+  border-radius: 50%;
 }
 
 #left {
   background-color: red;
+  left: 0px;
 }
 
 #center {
   background-color: orange;
-  margin-left: 100px;
-  margin-right: 100px;
+  left: 38%;
 }
 
 #right {
   background-color: yellow;
+  right: 0px;
 }
