@@ -1,5 +1,7 @@
 content = {
-  reveal: function() {
-    $("#content").fadeIn()
+  change: function() {
+    $("#content").fadeOut(400, function() {
+      $("#content").fadeIn()
+    })
   }
 }
