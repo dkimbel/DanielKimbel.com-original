@@ -4,11 +4,11 @@ h1 {
   margin-bottom: 80px;
 }
 
-#content {
+#buttons {
   margin: 0 auto;
   position: relative;
-  width: 800px;
-  height: 800px;
+  width: 760px;
+  height: 760px;
 }
 
 .large-nav-button {
@@ -29,7 +29,7 @@ h1 {
 
 #center {
   background: orange;
-  left: 304px;
+  left: 284px;
 }
 
 #right {
