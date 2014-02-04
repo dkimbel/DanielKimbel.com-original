@@ -1,0 +1,3 @@
+largeNavButtons = {
+  init: function() {}
+}
