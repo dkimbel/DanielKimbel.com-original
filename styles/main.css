@@ -1,7 +1,14 @@
 h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.2em;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 60px;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -140,6 +147,8 @@ a:hover {
 }
 
 .large-nav-button {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
   position: absolute;
   width: 192px;
   height: 192px;
@@ -185,4 +194,9 @@ a:hover {
 
 .fa-envelope:hover {
   color: #CCC;
+}
+
+img.greyscale { -webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+filter: grayscale(100%);
 }
