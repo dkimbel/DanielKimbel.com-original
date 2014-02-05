@@ -13,7 +13,7 @@ content = {
 
   transition: function() {
     if (content.somethingAlreadyDisplayed) {
-      $("#content").fadeOut(400, function() {
+      $("#content").fadeOut('slow', function() {
         content.addAndRevealNewContent()
       })
     } else {
@@ -24,7 +24,7 @@ content = {
 
   addAndRevealNewContent: function() {
     content.changeHTML()
-    $("#content").fadeIn()
+    $("#content").fadeIn('slow')
   },
 
   changeHTML: function() {
