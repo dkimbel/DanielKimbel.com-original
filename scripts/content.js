@@ -1,26 +1,39 @@
 content = {
-  currentDisplayed: null,
+  $lastButtonPressed: null,
+  somethingAlreadyDisplayed: false,
+
   displayClicked: function(e) {
-    if (e.target.id === content.currentDisplayed) {
+    if (content.somethingAlreadyDisplayed && $(e.target).attr("class") === content.$lastButtonPressed.attr("class")) {
       // do nothing
     } else {
-      content.currentDisplayed = e.target.class
+      content.$lastButtonPressed = $(e.target)
       content.transition(content.currentDisplayed)
     }
   },
-  transition: function(buttonPressedClass) {
-    $("#content").fadeOut(400, function() {
-      content.changeHTML(buttonPressedClass)
-      $("#content").fadeIn()
-    })
+
+  transition: function() {
+    if (content.somethingAlreadyDisplayed) {
+      $("#content").fadeOut(400, function() {
+        content.addAndRevealNewContent()
+      })
+    } else {
+      content.somethingAlreadyDisplayed = true
+      content.addAndRevealNewContent()
+    }
   },
-  changeHTML: function(buttonPressedClass) {
+
+  addAndRevealNewContent: function() {
+    content.changeHTML()
+    $("#content").fadeIn()
+  },
+
+  changeHTML: function() {
     var template = null
-    if (buttonPressedClass === "left") {
+    if (content.$lastButtonPressed.hasClass("left")) {
       template = $("#about")
-    } else if (buttonPressedClass === "center") {
+    } else if (content.$lastButtonPressed.hasClass("center")) {
       template = $("#project")
-    } else if (buttonPressedClass === "right") {
+    } else if (content.$lastButtonPressed.hasClass("right")) {
       template = $("#resume")
     }
     $("#content").html(template.html())
