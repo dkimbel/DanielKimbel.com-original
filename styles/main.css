@@ -16,11 +16,18 @@ h1 {
   margin: 0 auto;
   position: relative;
   width: 760px;
+  height: 250px;
   display: none;
+}
+
+#about-text {
+  position: absolute;
+  left: 280px;
 }
 
 .pic {
   border-radius: 50%;
+  position: absolute;
 }
 
 .hidden {
