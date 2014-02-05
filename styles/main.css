@@ -4,6 +4,14 @@ h1 {
   margin-bottom: 60px;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 #buttons {
   margin: 0 auto;
   position: relative;
@@ -25,9 +33,17 @@ h1 {
   left: 280px;
 }
 
+#about-text p {
+  text-align: justify;
+}
+
+#project-text p {
+  text-align: center;
+}
+
 #social-icons {
   position: absolute;
-  left: 300px;
+  left: 350px;
   bottom: 0px;
 }
 
