@@ -33,24 +33,57 @@ h1 {
 }
 
 .one {
-  width: 174px;
-  height: 174px;
-  border: solid transparent 9px;
-  border-top: solid red 9px;
-}
-
-.two {
   width: 182px;
   height: 182px;
   border: solid transparent 5px;
-  border-right: solid yellow 5px;
+}
+
+.two {
+  width: 174px;
+  height: 174px;
+  border: solid transparent 9px;
 }
 
 .three {
   width: 164px;
   height: 164px;
   border: solid transparent 14px;
-  border-left: solid blue 14px;
+}
+
+.one.left {
+  border-right: solid #4CDCFF 5px;
+}
+
+.two.left {
+  border-top: solid #00A4CC 9px;
+}
+
+.three.left {
+  border-left: solid #00667F 14px;
+}
+
+.one.center {
+  border-right: solid #4CFF9E 5px;
+}
+
+.two.center {
+  border-top: solid #00CC5E 9px;
+}
+
+.three.center {
+  border-left: solid #007F3B 14px;
+}
+
+.one.right {
+  border-right: solid #F64CFF 5px;
+}
+
+.two.right {
+  border-top: solid #C200CC 9px;
+}
+
+.three.right {
+  border-left: solid #79007F 14px;
 }
 
 .left {
