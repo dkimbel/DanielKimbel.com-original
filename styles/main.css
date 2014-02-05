@@ -76,6 +76,7 @@ h1 {
   line-height: 192px;
   font-size: 18px;
   background: #EEE;
+  z-index: 0;
 }
 
 .rotate-fast {
