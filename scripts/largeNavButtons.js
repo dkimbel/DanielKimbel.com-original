@@ -1,5 +1,6 @@
 largeNavButtons = {
   lastHoveredClass: null,
+  lastHoveredColor: null,
   $lastAssociatedShadows: null,
   animationClasses: ["rotate-fast", "rotate-medium", "rotate-slow"],
 
@@ -10,6 +11,7 @@ largeNavButtons = {
 
   hoverOn: function() {
     largeNavButtons.lastHoveredClass = largeNavButtons.getLastHoveredClass(this)
+    largeNavButtons.lastHoveredColor = largeNavButtons.getLastHoveredColor(this)
     $(this).css("background", "transparent")
     largeNavButtons.$lastAssociatedShadows = largeNavButtons.getAssociatedShadows()
     for (i in largeNavButtons.$lastAssociatedShadows) {
@@ -19,7 +21,7 @@ largeNavButtons = {
   },
 
   hoverOff: function() {
-    $(this).css("background", "#EEE")
+    $(this).css("background", largeNavButtons.lastHoveredColor)
     for (i in largeNavButtons.$lastAssociatedShadows) {
       largeNavButtons.$lastAssociatedShadows[i].toggleClass('hidden')
       largeNavButtons.$lastAssociatedShadows[i].toggleClass(largeNavButtons.animationClasses[i])
@@ -33,6 +35,10 @@ largeNavButtons = {
         return classes[i]
       }
     }
+  },
+
+  getLastHoveredColor: function(self) {
+    return $(self).css("background")
   },
 
   getAssociatedShadows: function() {

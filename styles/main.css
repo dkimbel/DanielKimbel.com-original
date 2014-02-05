@@ -107,8 +107,19 @@ h1 {
   border-radius: 50%;
   line-height: 192px;
   font-size: 18px;
-  background: #EEE;
   z-index: 0;
+}
+
+.large-nav-button.left {
+  background: #E5FAFF;
+}
+
+.large-nav-button.center {
+  background: #C9FFDC;
+}
+
+.large-nav-button.right {
+  background: #FFDEFB;
 }
 
 .rotate-fast {
