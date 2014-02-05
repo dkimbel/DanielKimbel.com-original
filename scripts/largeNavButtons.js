@@ -20,9 +20,9 @@ largeNavButtons = {
 
   hoverOff: function() {
     $(this).css("background", "#EEE")
-    for (i in largeNavButtons.lastAssociatedShadows) {
-      $(associatedShadows[i]).toggleClass('hidden')
-      $(associatedShadows[i]).toggleClass(largeNavButtons.animationClasses[i])
+    for (i in largeNavButtons.$lastAssociatedShadows) {
+      largeNavButtons.$lastAssociatedShadows[i].toggleClass('hidden')
+      largeNavButtons.$lastAssociatedShadows[i].toggleClass(largeNavButtons.animationClasses[i])
     }
   },
 
