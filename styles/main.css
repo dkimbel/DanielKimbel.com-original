@@ -33,8 +33,12 @@ a:hover {
   left: 280px;
 }
 
-#about-text p {
+.justify-text {
   text-align: justify;
+}
+
+.center-text {
+  text-align: center;
 }
 
 #project-text p {
