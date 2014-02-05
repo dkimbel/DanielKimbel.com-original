@@ -25,6 +25,24 @@ h1 {
   left: 280px;
 }
 
+#social-icons {
+  position: absolute;
+  left: 280px;
+  bottom: 0px;
+}
+
+#social-icons img {
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+  opacity: 0.7;
+  margin-right: 30px;
+}
+
+#social-icons img:hover {
+  opacity: 1.0;
+}
+
 .pic {
   border-radius: 50%;
   position: absolute;
