@@ -7,6 +7,30 @@ largeNavButtons = {
   init: function() {
     $(".large-nav-button").hover(largeNavButtons.hoverOn, largeNavButtons.hoverOff)
     .click(content.displayClicked)
+    .click(largeNavButtons.brieflyExpandAllBorders)
+  },
+
+  brieflyExpandAllBorders: function() {
+    for (i in largeNavButtons.$lastAssociatedShadows) {
+      var currShadow = largeNavButtons.$lastAssociatedShadows[i]
+      largeNavButtons.brieflyExpandBorders(currShadow)
+    }
+  },
+
+  brieflyExpandBorders: function(currShadow) {
+    if (currShadow.hasClass('one')) {
+      currShadow.animate({'height':'172px', 'width':'172px', 'border-width':'10px'}, 100, function() {
+        currShadow.animate({'height':'182px', 'width':'182px', 'border-width':'5px'}, 100)
+      })
+    } else if (currShadow.hasClass('two')) {
+      currShadow.animate({'height':'156px', 'width':'156px', 'border-width':'18px'}, 100, function() {
+        currShadow.animate({'height':'174px', 'width':'174px','border-width':'9px'}, 100)
+      })
+    } else if (currShadow.hasClass('three')) {
+      currShadow.animate({'height':'136px', 'width':'136px', 'border-width':'28px'}, 100, function() {
+        currShadow.animate({'height':'164px', 'width':'164px', 'border-width':'14px'}, 100)
+      })
+    }
   },
 
   hoverOn: function() {
@@ -14,17 +38,19 @@ largeNavButtons = {
     largeNavButtons.lastHoveredColor = largeNavButtons.getLastHoveredColor(this)
     $(this).css("background", "transparent")
     largeNavButtons.$lastAssociatedShadows = largeNavButtons.getAssociatedShadows()
-    for (i in largeNavButtons.$lastAssociatedShadows) {
-      largeNavButtons.$lastAssociatedShadows[i].toggleClass('hidden')
-      largeNavButtons.$lastAssociatedShadows[i].toggleClass(largeNavButtons.animationClasses[i])
-    }
+    largeNavButtons.toggleAppearances()
   },
 
   hoverOff: function() {
     $(this).css("background", largeNavButtons.lastHoveredColor)
+    largeNavButtons.toggleAppearances()
+  },
+
+  toggleAppearances: function() {
     for (i in largeNavButtons.$lastAssociatedShadows) {
-      largeNavButtons.$lastAssociatedShadows[i].toggleClass('hidden')
-      largeNavButtons.$lastAssociatedShadows[i].toggleClass(largeNavButtons.animationClasses[i])
+      var currShadow = largeNavButtons.$lastAssociatedShadows[i]
+      currShadow.toggleClass('hidden')
+      currShadow.toggleClass(largeNavButtons.animationClasses[i])
     }
   },
 
