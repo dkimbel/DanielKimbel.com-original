@@ -7,24 +7,24 @@ content = {
       // do nothing
     } else {
       content.$lastButtonPressed = $(e.target)
-      content.transition(content.currentDisplayed)
+      content.transition()
     }
   },
 
   transition: function() {
     if (content.somethingAlreadyDisplayed) {
-      $("#content").fadeOut('slow', function() {
-        content.addAndRevealNewContent()
+      $("#content").fadeOut(600, function() {
+        content.addAndRevealNewContent(600)
       })
     } else {
       content.somethingAlreadyDisplayed = true
-      content.addAndRevealNewContent()
+      content.addAndRevealNewContent(1200)
     }
   },
 
-  addAndRevealNewContent: function() {
+  addAndRevealNewContent: function(fadeTime) {
     content.changeHTML()
-    $("#content").fadeIn('slow')
+    $("#content").fadeIn(fadeTime)
   },
 
   changeHTML: function() {
@@ -40,7 +40,9 @@ content = {
   },
 
   clear: function() {
-    $("#content").fadeOut('slow')
+    $("#content").fadeOut(600, function() {
+      $("#content").html('')
+    })
     content.$lastButtonPressed = null
     content.somethingAlreadyDisplayed = false
   }
