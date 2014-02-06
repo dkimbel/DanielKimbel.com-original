@@ -210,8 +210,3 @@ a:hover {
 #home-link:hover {
   color: #999;
 }
-
-img.greyscale { -webkit-filter: grayscale(100%);
--moz-filter: grayscale(100%);
-filter: grayscale(100%);
-}
