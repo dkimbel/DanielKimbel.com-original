@@ -158,6 +158,7 @@ a:hover {
   line-height: 192px;
   font-size: 18px;
   z-index: 0;
+  cursor: pointer;
 }
 
 .large-nav-button.left {
@@ -194,6 +195,20 @@ a:hover {
 
 .fa-envelope:hover {
   color: #CCC;
+}
+
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#home-link {
+  cursor: pointer;
+}
+
+#home-link:hover {
+  color: #999;
 }
 
 img.greyscale { -webkit-filter: grayscale(100%);

@@ -37,5 +37,11 @@ content = {
       template = $("#resume")
     }
     $("#content").html(template.html())
+  },
+
+  clear: function() {
+    $("#content").fadeOut('slow')
+    content.$lastButtonPressed = null
+    content.somethingAlreadyDisplayed = false
   }
 }
