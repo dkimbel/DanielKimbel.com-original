@@ -14,31 +14,38 @@ content = {
   transition: function() {
     if (content.somethingAlreadyDisplayed) {
       $("#content").fadeOut(600, function() {
-        content.addAndRevealNewContent(600)
+        content.addAndRevealNew(600)
       })
     } else {
       content.somethingAlreadyDisplayed = true
       setTimeout(function() {
-        content.addAndRevealNewContent(1000)
+        content.addAndRevealNew(1000)
       }, 300)
     }
   },
 
-  addAndRevealNewContent: function(fadeTime) {
-    content.changeHTML()
-    $("#content").fadeIn(fadeTime)
+  addAndRevealNew: function(fadeTime, template) {
+    content.changeHTML(template)
+    content.reveal(fadeTime)
   },
 
-  changeHTML: function() {
-    var template = null
-    if (content.$lastButtonPressed.hasClass("left")) {
-      template = $("#about")
-    } else if (content.$lastButtonPressed.hasClass("center")) {
-      template = $("#project")
-    } else if (content.$lastButtonPressed.hasClass("right")) {
-      template = $("#resume")
-    }
+  changeHTML: function(template) {
+    var template = typeof(template) !== undefined ? template : content.getTemplate()
     $("#content").html(template.html())
+  },
+
+  reveal: function(fadeTime) {
+    $("content").fadeIn(fadeTime)
+  },
+
+  getTemplate: function() {
+    if (content.$lastButtonPressed.hasClass("left")) {
+      return $("#about")
+    } else if (content.$lastButtonPressed.hasClass("center")) {
+      return $("#project")
+    } else if (content.$lastButtonPressed.hasClass("right")) {
+      return $("#resume")
+    }
   },
 
   clear: function() {
