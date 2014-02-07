@@ -18,7 +18,9 @@ content = {
       })
     } else {
       content.somethingAlreadyDisplayed = true
-      content.addAndRevealNewContent(1200)
+      setTimeout(function() {
+        content.addAndRevealNewContent(1000)
+      }, 300)
     }
   },
 
