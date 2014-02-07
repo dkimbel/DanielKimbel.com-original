@@ -10,5 +10,9 @@ hash = {
     } else {
       content.addAndRevealNew('#' + currHash)
     }
+  },
+
+  change: function(hashName) {
+    location.hash = hashName
   }
 }
