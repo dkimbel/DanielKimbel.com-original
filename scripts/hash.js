@@ -23,5 +23,23 @@ hash = {
 
   remove: function() {
     location.hash = ''
+  },
+
+  notBlank: function() {
+    return location.hash !== ''
+  },
+
+  get: function() {
+    return location.hash
+  },
+
+  inferNext: function() {
+    if (content.$lastButtonPressed.hasClass("left")) {
+      return "about"
+    } else if (content.$lastButtonPressed.hasClass("center")) {
+      return "project"
+    } else if (content.$lastButtonPressed.hasClass("right")) {
+      return "resume"
+    }
   }
 }

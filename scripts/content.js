@@ -14,11 +14,11 @@ content = {
   transition: function() {
     if (content.somethingAlreadyDisplayed) {
       $("#content").fadeOut(600, function() {
-        hash.change(600, content.getHash())
+        hash.change(600, hash.inferNext())
       })
     } else {
       content.somethingAlreadyDisplayed = true
-      hash.change(1000, content.getHash())
+      hash.change(1000, hash.inferNext())
     }
   },
 
@@ -39,16 +39,6 @@ content = {
       }, 300)
     } else {
       $("#content").fadeIn(fadeTime)
-    }
-  },
-
-  getHash: function() {
-    if (content.$lastButtonPressed.hasClass("left")) {
-      return "about"
-    } else if (content.$lastButtonPressed.hasClass("center")) {
-      return "project"
-    } else if (content.$lastButtonPressed.hasClass("right")) {
-      return "resume"
     }
   },
 
@@ -79,7 +69,25 @@ content = {
   },
 
   fastReveal: function(template) {
+    console.log('fastReveal called!')
     content.changeHTML(template)
-    $("#content").css("display","block")
+    if (hash.notBlank()) {
+      content.somethingAlreadyDisplayed = true
+      $("#content").css("display","block")
+      content.$lastButtonPressed = content.inferLastButtonPressed()
+    }
+  },
+
+  inferLastButtonPressed: function() {
+    var currHash = hash.get()
+    var index
+    if (currHash === '#about') {
+      index = 0
+    } else if (currHash === '#project') {
+      index = 1
+    } else if (currHash === '#resume') {
+      index = 2
+    }
+    return $($('.large-nav-button')[index])
   }
 }
