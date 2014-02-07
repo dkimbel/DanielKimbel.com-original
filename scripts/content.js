@@ -69,7 +69,6 @@ content = {
   },
 
   fastReveal: function(template) {
-    console.log('fastReveal called!')
     content.changeHTML(template)
     if (hash.notBlank()) {
       content.somethingAlreadyDisplayed = true
