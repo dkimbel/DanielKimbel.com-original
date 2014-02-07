@@ -34,7 +34,7 @@ content = {
 
   reveal: function(fadeTime) {
     if (fadeTime >= 1000) {
-      setInterval(function() {
+      setTimeout(function() {
         $("#content").fadeIn(fadeTime)
       }, 300)
     } else {
