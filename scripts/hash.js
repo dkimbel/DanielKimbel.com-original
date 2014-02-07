@@ -1,6 +1,6 @@
 hash = {
   init: function() {
-    window.addEventListener('hashchange', handleChange)
+    window.addEventListener('hashchange', hash.handleChange)
   },
 
   handleChange: function() {
@@ -8,11 +8,15 @@ hash = {
     if (currHash === '') {
       content.clear()
     } else {
-      content.addAndRevealNew('#' + currHash)
+      content.addAndRevealNew(600, $(currHash))
     }
   },
 
-  change: function(hashName) {
+  change: function(fadeTime, hashName) {
     location.hash = hashName
+  },
+
+  remove: function() {
+    location.hash = ''
   }
 }

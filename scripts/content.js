@@ -14,28 +14,38 @@ content = {
   transition: function() {
     if (content.somethingAlreadyDisplayed) {
       $("#content").fadeOut(600, function() {
-        content.addAndRevealNew(600)
+        hash.change(600, content.getHash())
       })
     } else {
       content.somethingAlreadyDisplayed = true
       setTimeout(function() {
-        content.addAndRevealNew(1000)
+        hash.change(1000, content.getHash())
       }, 300)
     }
   },
 
   addAndRevealNew: function(fadeTime, template) {
+    var template = typeof(template) !== undefined ? template : content.getTemplate()
     content.changeHTML(template)
     content.reveal(fadeTime)
   },
 
   changeHTML: function(template) {
-    var template = typeof(template) !== undefined ? template : content.getTemplate()
     $("#content").html(template.html())
   },
 
   reveal: function(fadeTime) {
-    $("content").fadeIn(fadeTime)
+    $("#content").fadeIn(fadeTime)
+  },
+
+  getHash: function() {
+    if (content.$lastButtonPressed.hasClass("left")) {
+      return "about"
+    } else if (content.$lastButtonPressed.hasClass("center")) {
+      return "project"
+    } else if (content.$lastButtonPressed.hasClass("right")) {
+      return "resume"
+    }
   },
 
   getTemplate: function() {
@@ -54,5 +64,6 @@ content = {
     })
     content.$lastButtonPressed = null
     content.somethingAlreadyDisplayed = false
+    hash.remove()
   }
 }
