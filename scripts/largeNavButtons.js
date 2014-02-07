@@ -1,6 +1,8 @@
 largeNavButtons = {
   lastHoveredClass: null,
-  lastHoveredColor: null,
+  lastColor: null,
+  lastTouchedColor: null,
+  $lastButtonTouched: null,
   $lastAssociatedShadows: null,
   animationClasses: ["rotate-fast", "rotate-medium", "rotate-slow"],
 
@@ -8,6 +10,7 @@ largeNavButtons = {
     $(".large-nav-button").hover(largeNavButtons.hoverOn, largeNavButtons.hoverOff)
     .click(content.displayClicked)
     .click(largeNavButtons.brieflyExpandAllBorders)
+    .on('touchstart', largeNavButtons.handleTouch)
   },
 
   brieflyExpandAllBorders: function() {
@@ -36,14 +39,14 @@ largeNavButtons = {
 
   hoverOn: function() {
     largeNavButtons.lastHoveredClass = largeNavButtons.getLastHoveredClass(this)
-    largeNavButtons.lastHoveredColor = largeNavButtons.getLastHoveredColor(this)
+    largeNavButtons.lastColor = largeNavButtons.getLastColor(this)
     $(this).css("background", "transparent")
     largeNavButtons.$lastAssociatedShadows = largeNavButtons.getAssociatedShadows()
     largeNavButtons.toggleAppearances()
   },
 
   hoverOff: function() {
-    $(this).css("background", largeNavButtons.lastHoveredColor)
+    $(this).css("background", largeNavButtons.lastColor)
     largeNavButtons.toggleAppearances()
   },
 
@@ -64,8 +67,12 @@ largeNavButtons = {
     }
   },
 
-  getLastHoveredColor: function(self) {
+  getLastColor: function(self) {
     return $(self).css("background")
+  },
+
+  getLastTouchedColor: function() {
+    return largeNavButtons.$lastButtonTouched.css("background")
   },
 
   getAssociatedShadows: function() {
@@ -77,5 +84,20 @@ largeNavButtons = {
       }
     }
     return associatedShadows
+  },
+
+  handleTouch: function(e) {
+    largeNavButtons.$lastButtonTouched = $(e.target)
+    largeNavButtons.lastTouchedColor = largeNavButtons.getLastTouchedColor()
+    e.preventDefault()
+    largeNavButtons.flashTouchedColor()
+    largeNavButtons.$lastButtonTouched.trigger('click')
+  },
+
+  flashTouchedColor: function() {
+    largeNavButtons.$lastButtonTouched.css('background','#eee')
+    setTimeout(function() {
+      largeNavButtons.$lastButtonTouched.css('background',largeNavButtons.lastTouchedColor)
+    }, 100)
   }
 }
