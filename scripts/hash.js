@@ -12,6 +12,8 @@ hash = {
     if (currHash === '') {
       content.fastClear()
     } else {
+      content.somethingAlreadyDisplayed = true
+      content.$lastButtonPressed = content.inferLastButtonPressed()
       content.addAndRevealNew(hash.nextFadeTime, $(currHash))
     }
   },
