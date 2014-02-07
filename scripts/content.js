@@ -18,9 +18,7 @@ content = {
       })
     } else {
       content.somethingAlreadyDisplayed = true
-      setTimeout(function() {
-        hash.change(1000, content.getHash())
-      }, 300)
+      hash.change(1000, content.getHash())
     }
   },
 
@@ -35,7 +33,13 @@ content = {
   },
 
   reveal: function(fadeTime) {
-    $("#content").fadeIn(fadeTime)
+    if (fadeTime >= 1000) {
+      setInterval(function() {
+        $("#content").fadeIn(fadeTime)
+      }, 300)
+    } else {
+      $("#content").fadeIn(fadeTime)
+    }
   },
 
   getHash: function() {
@@ -61,9 +65,21 @@ content = {
   clear: function() {
     $("#content").fadeOut(600, function() {
       $("#content").html('')
+      hash.remove()
     })
     content.$lastButtonPressed = null
     content.somethingAlreadyDisplayed = false
-    hash.remove()
+  },
+
+  fastClear: function() {
+    $("#content").css("display","none")
+    $("#content").html('')
+    content.$lastButtonPressed = null
+    content.somethingAlreadyDisplayed = false
+  },
+
+  fastReveal: function(template) {
+    content.changeHTML(template)
+    $("#content").css("display","block")
   }
 }
