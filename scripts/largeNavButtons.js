@@ -9,14 +9,14 @@ largeNavButtons = {
   init: function() {
     $(".large-nav-button").hover(this.hoverOn, this.hoverOff)
     .click(content.displayClicked)
-    .click(this.brieflyExpandAllBorders)
+    .click(this.brieflyExpandAllBorders.bind(this))
     .on('touchstart', this.handleTouch)
   },
 
   brieflyExpandAllBorders: function() {
-    for (i in largeNavButtons.$lastAssociatedShadows) {
-      var currShadow = largeNavButtons.$lastAssociatedShadows[i]
-      largeNavButtons.brieflyExpandBorders(currShadow)
+    for (i in this.$lastAssociatedShadows) {
+      var currShadow = this.$lastAssociatedShadows[i]
+      this.brieflyExpandBorders(currShadow)
     }
   },
 
