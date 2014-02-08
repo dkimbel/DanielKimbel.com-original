@@ -10,7 +10,7 @@ largeNavButtons = {
     $(".large-nav-button").hover(this.hoverOn.bind(this), this.hoverOff.bind(this))
     .click(content.displayClicked)
     .click(this.brieflyExpandAllBorders.bind(this))
-    .on('touchstart', this.handleTouch)
+    .on('touchstart', this.handleTouch.bind(this))
   },
 
   brieflyExpandAllBorders: function() {
@@ -99,7 +99,7 @@ largeNavButtons = {
   flashTouchedColor: function() {
     this.$lastButtonTouched.css('background','#eee')
     setTimeout(function() {
-      this.$lastButtonTouched.css('background',this.lastTouchedColor)
+      largeNavButtons.$lastButtonTouched.css('background',largeNavButtons.lastTouchedColor)
     }, 100)
   }
 }
