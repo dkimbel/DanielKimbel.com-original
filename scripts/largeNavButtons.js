@@ -7,10 +7,10 @@ largeNavButtons = {
   animationClasses: ["rotate-fast", "rotate-medium", "rotate-slow"],
 
   init: function() {
-    $(".large-nav-button").hover(largeNavButtons.hoverOn, largeNavButtons.hoverOff)
+    $(".large-nav-button").hover(this.hoverOn, this.hoverOff)
     .click(content.displayClicked)
-    .click(largeNavButtons.brieflyExpandAllBorders)
-    .on('touchstart', largeNavButtons.handleTouch)
+    .click(this.brieflyExpandAllBorders)
+    .on('touchstart', this.handleTouch)
   },
 
   brieflyExpandAllBorders: function() {
