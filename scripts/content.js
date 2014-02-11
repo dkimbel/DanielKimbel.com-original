@@ -3,29 +3,30 @@ content = {
   somethingAlreadyDisplayed: false,
 
   displayClicked: function(e) {
-    if (content.somethingAlreadyDisplayed && $(e.target).attr("class") === content.$lastButtonPressed.attr("class")) {
+    var buttonClicked = e.target
+    if (this.somethingAlreadyDisplayed && $(buttonClicked).attr("class") === this.$lastButtonPressed.attr("class")) {
       // do nothing
     } else {
-      content.$lastButtonPressed = $(e.target)
-      content.transition()
+      this.$lastButtonPressed = $(buttonClicked)
+      this.transition()
     }
   },
 
   transition: function() {
-    if (content.somethingAlreadyDisplayed) {
+    if (this.somethingAlreadyDisplayed) {
       $("#content").fadeOut(600, function() {
         hash.change(600, hash.inferNext())
       })
     } else {
-      content.somethingAlreadyDisplayed = true
+      this.somethingAlreadyDisplayed = true
       hash.change(1000, hash.inferNext())
     }
   },
 
   addAndRevealNew: function(fadeTime, template) {
-    var template = typeof(template) !== undefined ? template : content.getTemplate()
-    content.changeHTML(template)
-    content.reveal(fadeTime)
+    var template = typeof(template) !== undefined ? template : this.getTemplate()
+    this.changeHTML(template)
+    this.reveal(fadeTime)
   },
 
   changeHTML: function(template) {
