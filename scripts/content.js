@@ -24,7 +24,6 @@ content = {
   },
 
   addAndRevealNew: function(fadeTime, template) {
-    var template = typeof(template) !== undefined ? template : this.getTemplate()
     this.changeHTML(template)
     this.reveal(fadeTime)
   },
@@ -43,38 +42,26 @@ content = {
     }
   },
 
-  getTemplate: function() {
-    if (content.$lastButtonPressed.hasClass("left")) {
-      return $("#about")
-    } else if (content.$lastButtonPressed.hasClass("center")) {
-      return $("#project")
-    } else if (content.$lastButtonPressed.hasClass("right")) {
-      return $("#resume")
-    }
-  },
-
   clear: function() {
     $("#content").fadeOut(600, function() {
       $("#content").html('')
       hash.remove()
     })
-    content.$lastButtonPressed = null
-    content.somethingAlreadyDisplayed = false
   },
 
   fastClear: function() {
     $("#content").css("display","none")
     $("#content").html('')
-    content.$lastButtonPressed = null
-    content.somethingAlreadyDisplayed = false
+    this.$lastButtonPressed = null
+    this.somethingAlreadyDisplayed = false
   },
 
   fastReveal: function(template) {
-    content.changeHTML(template)
+    this.changeHTML(template)
     if (hash.notBlank()) {
-      content.somethingAlreadyDisplayed = true
+      this.somethingAlreadyDisplayed = true
       $("#content").css("display","block")
-      content.$lastButtonPressed = content.inferLastButtonPressed()
+      this.$lastButtonPressed = this.inferLastButtonPressed()
     }
   },
 
