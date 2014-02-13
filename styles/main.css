@@ -1,5 +1,7 @@
 body {
-  height: 950px;
+  position: relative;
+  min-height: 601px;
+  padding-bottom: 30px;
 }
 
 h1 {
@@ -29,8 +31,9 @@ footer {
   color: #BBB;
   position: absolute;
   width: 100%;
+  height: 30px;
   left: 0px;
-  top: 950px;
+  bottom: 0px;
 }
 
 #buttons {
