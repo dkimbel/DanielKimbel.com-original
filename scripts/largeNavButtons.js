@@ -8,7 +8,7 @@ largeNavButtons = {
 
   init: function() {
     $(".large-nav-button").hover(this.hoverOn.bind(this), this.hoverOff.bind(this))
-    .click(content.displayClicked)
+    .click(content.displayClicked.bind(content))
     .click(this.brieflyExpandAllBorders.bind(this))
     .on('touchstart', this.handleTouch.bind(this))
   },
