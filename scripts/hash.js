@@ -39,7 +39,7 @@ hash = {
     if (content.$lastButtonPressed.hasClass("left")) {
       return "about"
     } else if (content.$lastButtonPressed.hasClass("center")) {
-      return "project"
+      return "portfolio"
     } else if (content.$lastButtonPressed.hasClass("right")) {
       return "resume"
     }

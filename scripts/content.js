@@ -70,7 +70,7 @@ content = {
     var index
     if (currHash === '#about') {
       index = 0
-    } else if (currHash === '#project') {
+    } else if (currHash === '#portfolio') {
       index = 1
     } else if (currHash === '#resume') {
       index = 2
