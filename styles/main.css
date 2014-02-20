@@ -227,7 +227,7 @@ footer {
 
 table {
   position: relative;
-  border-spacing: 0 15px;
+  border-spacing: 0 25px;
 }
 
 td {
@@ -235,6 +235,7 @@ td {
   position: relative;
   overflow: hidden;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 td:nth-of-type(odd) {
@@ -243,20 +244,27 @@ td:nth-of-type(odd) {
 
 td:nth-of-type(even) {
   width: 460px;
+  text-align: justify;
 }
 
-.site-links {
+.site-header {
+  left: 10px;
+  top: 5px;
   position: absolute;
-  right: 10px;
-  bottom: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 .site-description {
 
 }
 
-.site-header {
-
+.site-links {
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  font-size: 12px;
 }
 
 .screenshot {
@@ -264,6 +272,10 @@ td:nth-of-type(even) {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.screenshot:hover {
+  opacity: 0.7;
 }
 
 .fa-question-circle {
