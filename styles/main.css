@@ -50,6 +50,7 @@ footer {
   position: relative;
   width: 660px;
   min-height: 250px;
+  max-height: 700px;
   display: none;
 }
 
@@ -227,7 +228,8 @@ footer {
 
 table {
   position: relative;
-  border-spacing: 0 25px;
+  border-spacing: 0 50px;
+  top: -50px;
 }
 
 td {
@@ -248,9 +250,9 @@ td:nth-of-type(even) {
 }
 
 .site-header {
-  left: 10px;
-  top: 5px;
   position: absolute;
+  left: 25px;
+  top: 5px;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -258,14 +260,14 @@ td:nth-of-type(even) {
 
 .site-description {
   position: absolute;
-  left: 10px;
+  left: 25px;
   top: 30px;
   font-size: 14px;
 }
 
 .site-links {
   position: absolute;
-  left: 10px;
+  left: 25px;
   bottom: 5px;
   font-size: 12px;
 }
