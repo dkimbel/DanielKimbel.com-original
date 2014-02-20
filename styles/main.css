@@ -290,3 +290,7 @@ td:nth-of-type(even) {
   top: -14px;
   color: #FFF6B5;
 }
+
+.fa-question-circle:hover {
+  opacity: 0.75;
+}
