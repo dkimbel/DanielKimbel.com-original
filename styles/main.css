@@ -49,7 +49,7 @@ footer {
   margin: 0 auto;
   position: relative;
   width: 660px;
-  height: 250px;
+  min-height: 250px;
   display: none;
 }
 
@@ -227,4 +227,40 @@ footer {
 
 #home-link:hover {
   color: #999;
+}
+
+table {
+  position: relative;
+  border-spacing: 0 15px;
+}
+
+td {
+  height: 200px;
+  position: relative;
+}
+
+td:nth-of-type(odd) {
+  width: 200px;
+}
+
+td:nth-of-type(even) {
+  width: 460px;
+  background-color: blue;
+}
+
+.site-links {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+
+.site-description {
+  position: absolute;
+}
+
+.screenshot {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
