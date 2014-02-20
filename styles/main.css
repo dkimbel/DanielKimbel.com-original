@@ -176,7 +176,7 @@ footer {
 }
 
 .large-nav-button.left {
-  background: #E5FAFF;
+  background: #D9FAFF;
 }
 
 .large-nav-button.center {
@@ -257,7 +257,10 @@ td:nth-of-type(even) {
 }
 
 .site-description {
-
+  position: absolute;
+  left: 10px;
+  top: 30px;
+  font-size: 14px;
 }
 
 .site-links {
