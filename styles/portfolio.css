@@ -35,6 +35,7 @@ td:nth-of-type(even) {
   left: 25px;
   bottom: 5px;
   font-size: 14px;
+  width: 435px;
 }
 
 .site-links {
