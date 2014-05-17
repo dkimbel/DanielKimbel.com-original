@@ -22,23 +22,23 @@ td:nth-of-type(even) {
 }
 
 .site-header {
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 5px;
+  bottom: 5px;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 18px;
 }
 
 .site-description {
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 30px;
+  bottom: 5px;
   font-size: 14px;
 }
 
 .site-links {
-  position: absolute;
+  position: relative;
   left: 25px;
   bottom: 5px;
   font-size: 12px;
@@ -46,9 +46,7 @@ td:nth-of-type(even) {
 
 .screenshot {
   border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
 }
 
 .screenshot:hover {
@@ -56,9 +54,8 @@ td:nth-of-type(even) {
 }
 
 .fa-question-circle {
-  position: absolute;
+  position: relative;
   font-size: 233px;
-  left: 0;
   top: -14px;
   color: #FFF6B5;
 }
