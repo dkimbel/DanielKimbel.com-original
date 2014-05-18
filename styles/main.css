@@ -80,6 +80,7 @@ footer {
 .pic {
   border-radius: 50%;
   position: absolute;
+  opacity: 0.92;
 }
 
 .hidden {
